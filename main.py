@@ -1,4 +1,4 @@
-import pandas as pd
+import csv
 
 
 
@@ -6,10 +6,28 @@ import pandas as pd
 
 if __name__ == '__main__':
 
-    df = pd.read_csv("output/output/csv/payers.csv")
-    print(df.columns)
 
-    print(df[['NAME','AMOUNT_COVERED']])
+    with open('output/output/csv/payers.csv') as f:
+        reader = csv.DictReader(f)
+
+        result = {}
+
+        for row in reader:
+
+            if 'NAME' in result.keys():
+
+
+                result[row['NAME']] = row['NAME']+row['AMOUNT_COVERED']
+                
+            else:
+                result[row['NAME']] = row['AMOUNT_COVERED']
+
+        print(result)
+
+            
+            
+
+
 
 
 
