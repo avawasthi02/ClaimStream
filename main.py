@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
         for row in reader:
 
-            if 'NAME' in result.keys():
+            if row['NAME'] in result.keys():
 
 
                 result[row['NAME']] = row['NAME']+row['AMOUNT_COVERED']
