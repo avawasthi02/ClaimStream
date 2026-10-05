@@ -13,14 +13,14 @@ if __name__ == '__main__':
         result = {}
 
         for row in reader:
+            
 
             if row['NAME'] in result.keys():
-
-
-                result[row['NAME']] = row['NAME']+row['AMOUNT_COVERED']
+                
+                result[row['NAME']] = result[row['NAME']]+float(row['AMOUNT_COVERED'])
                 
             else:
-                result[row['NAME']] = row['AMOUNT_COVERED']
+                result[row['NAME']] = float(row['AMOUNT_COVERED'])
 
         print(result)
 
